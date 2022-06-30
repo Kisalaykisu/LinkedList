@@ -6,7 +6,7 @@ package com.bridgelabz;
 
 public class LinkedList {
     Node head; // Taking node as head
-    Node tail;  // Taking node as tail
+    Node tail; // Taking node as tail
 
     /**
      * method to create Linked List
@@ -16,11 +16,11 @@ public class LinkedList {
      */
     public Node push(int data) { //This is Node class
         Node newNode = new Node(data); //Create a new node
-        if (head == null) {  //Checks if the list is empty
+        if (head == null) { //Checks if the list is empty
             this.head = newNode; //If list is empty, both head and tail will point to new node
             this.tail = newNode;
         } else {
-            Node temp = head;  //Node current will point to head
+            Node temp = head; //Node current will point to head
             this.head = newNode;
             newNode.next = temp;
         }
@@ -74,11 +74,9 @@ public class LinkedList {
         while (temp != null) {
             if (temp.data == previous && temp.next.data == next) {
                 Node afterInsert = temp.next;
-                temp.next = insertNode;
-                temp.next.next = afterInsert;  // node = current node
-                                               // node.next = next node to current
-                                               //node.next.next = 2nd node from current node
-                break;
+                temp.next = insertNode; // node = current node
+                temp.next.next = afterInsert; // node.next = next node to current
+                break;      //node.next.next = 2nd node from current node
             }
             temp = temp.next;
         }
@@ -124,7 +122,26 @@ public class LinkedList {
         }
         System.out.println("The Node with key value " + key + " is " + nodeCount);
     }
-}
 
+    /**
+     * Method to insert value after specific Node
+     *
+     * @param previous takes in the value of Node after which insertion should be done
+     * @param current  takes in the insertion value
+     */
+    public void insertAfterElement(int previous, int current) {
+        Node insertNode = new Node(current);
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == previous) {
+                Node afterInsert = temp.next;
+                temp.next = insertNode;
+                temp.next.next = afterInsert;
+                break;
+            }
+            temp = temp.next;
+        }
+    }
+}
 
 

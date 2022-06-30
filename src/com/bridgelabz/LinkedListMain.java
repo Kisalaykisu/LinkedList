@@ -10,6 +10,8 @@ public class LinkedListMain {
         obj.insert(56, 30, 70);
         System.out.println("Linked List after inserting 30 between 56 and 70: ");
         obj.showLinkedList();
-        obj.search(30);
+        obj.insertAfterElement(30, 40);
+        System.out.println("The LinkedList after inserting 40 after 30 is: ");
+        obj.showLinkedList();
     }
 }
