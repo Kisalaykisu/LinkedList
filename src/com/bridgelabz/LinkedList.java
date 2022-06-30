@@ -5,8 +5,8 @@ of 56, 30 and 70
 package com.bridgelabz;
 
 public class LinkedList {
-    Node head;
-    Node tail;
+    Node head;  // Taking node as head
+    Node tail;  // Taking node as head
 
     /**
      * method to create Linked List
@@ -14,17 +14,16 @@ public class LinkedList {
      *
      * @param data integer to be added in linked list
      */
-    public Node push(int data) {   //This is Node class
-        Node newNode = new Node(data);  //Create a new node
-        if (head == null) {  //Checks if the list is empty
-            this.head = newNode;  //If list is empty, both head and tail will point to new node
+    public Node push(int data) { //This is Node class
+        Node newNode = new Node(data); //Create a new node
+        if (head == null) { //Checks if the list is empty
+            this.head = newNode; //If list is empty, both head and tail will point to new node
             this.tail = newNode;
         } else {
-            Node temp = head;  //Node current will point to head
+            Node temp = head; //Node current will point to head
             this.head = newNode;
             newNode.next = temp;
         }
-
         return newNode;
     }
 
@@ -42,5 +41,4 @@ public class LinkedList {
             }
         }
     }
-
 }
