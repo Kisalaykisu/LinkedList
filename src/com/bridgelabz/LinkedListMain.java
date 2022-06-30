@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 public class LinkedListMain {
     public static void main(String[] args) {
-        LinkedList obj = new LinkedList();
+        LinkedList obj = new LinkedList(); //Make LinkedList obj
         obj.push(70);
         obj.push(30);
         obj.push(56);
