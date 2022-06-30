@@ -6,7 +6,7 @@ package com.bridgelabz;
 
 public class LinkedList {
     Node head; // Taking node as head
-    Node tail; // Taking node as tail
+    Node tail;  // Taking node as tail
 
     /**
      * method to create Linked List
@@ -20,7 +20,7 @@ public class LinkedList {
             this.head = newNode; //If list is empty, both head and tail will point to new node
             this.tail = newNode;
         } else {
-            Node temp = head; //Node current will point to head
+            Node temp = head;  //Node current will point to head
             this.head = newNode;
             newNode.next = temp;
         }
@@ -74,9 +74,11 @@ public class LinkedList {
         while (temp != null) {
             if (temp.data == previous && temp.next.data == next) {
                 Node afterInsert = temp.next;
-                temp.next = insertNode; // node = current node
-                temp.next.next = afterInsert; // node.next = next node to current
-                break;      //node.next.next = 2nd node from current node
+                temp.next = insertNode;
+                temp.next.next = afterInsert;  // node = current node
+                                               // node.next = next node to current
+                                               //node.next.next = 2nd node from current node
+                break;
             }
             temp = temp.next;
         }
@@ -141,6 +143,41 @@ public class LinkedList {
             }
             temp = temp.next;
         }
+    }
+
+    /**
+     * Method to delete an element
+     *
+     * @param key takes in the key which should be deleted from LinkedList
+     */
+    public void delete(int key) {
+        Node temp = head;               //56,30,40,70
+        if (head.data == key) {
+            pop();
+        } else if (tail.data == key) {
+            popLast();
+        } else {
+            while (temp != null) {
+                if (temp.next.data == key) {
+                    temp.next = temp.next.next;
+                    break;
+                }
+                temp = temp.next;
+            }
+        }
+    }
+
+    /**
+     * Method to find the size of LinkedList
+     */
+    public void size() {
+        Node temp = head;
+        int nodeCount = 0;
+        while (temp != null) {
+            nodeCount++;
+            temp = temp.next;
+        }
+        System.out.println("The size of LinkedList is: " + nodeCount);
     }
 }
 

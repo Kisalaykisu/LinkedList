@@ -12,6 +12,11 @@ public class LinkedListMain {
         obj.showLinkedList();
         obj.insertAfterElement(30, 40);
         System.out.println("The LinkedList after inserting 40 after 30 is: ");
+        obj.size();
+        obj.showLinkedList();
+        obj.delete(40);
+        obj.size();
+        System.out.println("The LinkedList after deleting 40 is: ");
         obj.showLinkedList();
     }
 }
