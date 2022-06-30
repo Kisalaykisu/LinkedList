@@ -6,7 +6,7 @@ package com.bridgelabz;
 
 public class LinkedList {
     Node head; // Taking node as head
-    Node tail; // Taking node as head
+    Node tail;  // Taking node as tail
 
     /**
      * method to create Linked List
@@ -16,11 +16,11 @@ public class LinkedList {
      */
     public Node push(int data) { //This is Node class
         Node newNode = new Node(data); //Create a new node
-        if (head == null) { //Checks if the list is empty
+        if (head == null) {  //Checks if the list is empty
             this.head = newNode; //If list is empty, both head and tail will point to new node
             this.tail = newNode;
         } else {
-            Node temp = head; //Node current will point to head
+            Node temp = head;  //Node current will point to head
             this.head = newNode;
             newNode.next = temp;
         }
@@ -33,7 +33,7 @@ public class LinkedList {
      *
      * @param data integer to be added in linked list
      */
-    public Node append(int data) { //Append used
+    public Node append(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             this.head = newNode;
@@ -75,7 +75,9 @@ public class LinkedList {
             if (temp.data == previous && temp.next.data == next) {
                 Node afterInsert = temp.next;
                 temp.next = insertNode;
-                temp.next.next = afterInsert;
+                temp.next.next = afterInsert;  // node = current node
+                                               // node.next = next node to current
+                                               //node.next.next = 2nd node from current node
                 break;
             }
             temp = temp.next;
@@ -103,6 +105,24 @@ public class LinkedList {
         }
         temp.next = null;
         tail = temp;
+    }
+
+    /**
+     * Method to find node with key value
+     *
+     * @param key to pass in the value of key
+     */
+    public void search(int key) {
+        Node temp = head;
+        int nodeCount = 1;
+        while (temp != null) {
+            if (temp.data == key) {
+                break;
+            }
+            nodeCount++;
+            temp = temp.next;
+        }
+        System.out.println("The Node with key value " + key + " is " + nodeCount);
     }
 }
 
