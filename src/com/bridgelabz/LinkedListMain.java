@@ -1,22 +1,14 @@
 package com.bridgelabz;
+import java.util.Arrays;
 
 public class LinkedListMain {
     public static void main(String[] args) {
         LinkedList obj = new LinkedList();
-        obj.append(56);
-        obj.append(70);
-        System.out.println("The current LinkedList is: ");
-        obj.showLinkedList();
-        obj.insert(56, 30, 70);
-        System.out.println("Linked List after inserting 30 between 56 and 70: ");
-        obj.showLinkedList();
-        obj.insertAfterElement(30, 40);
-        System.out.println("The LinkedList after inserting 40 after 30 is: ");
-        obj.size();
-        obj.showLinkedList();
-        obj.delete(40);
-        obj.size();
-        System.out.println("The LinkedList after deleting 40 is: ");
+        int[] array = {56, 30, 40, 70};
+        Arrays.sort(array);
+        for (int item : array) {
+            obj.append(item);
+        }
         obj.showLinkedList();
     }
 }

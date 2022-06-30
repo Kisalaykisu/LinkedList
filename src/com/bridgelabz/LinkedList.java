@@ -6,7 +6,7 @@ package com.bridgelabz;
 
 public class LinkedList {
     Node head; // Taking node as head
-    Node tail;  // Taking node as tail
+    Node tail; // Taking node as tail
 
     /**
      * method to create Linked List
@@ -20,7 +20,7 @@ public class LinkedList {
             this.head = newNode; //If list is empty, both head and tail will point to new node
             this.tail = newNode;
         } else {
-            Node temp = head;  //Node current will point to head
+            Node temp = head; //Node current will point to head
             this.head = newNode;
             newNode.next = temp;
         }
@@ -75,9 +75,9 @@ public class LinkedList {
             if (temp.data == previous && temp.next.data == next) {
                 Node afterInsert = temp.next;
                 temp.next = insertNode;
-                temp.next.next = afterInsert;  // node = current node
-                                               // node.next = next node to current
-                                               //node.next.next = 2nd node from current node
+                temp.next.next = afterInsert; // node = current node
+                                              // node.next = next node to current
+                                              //node.next.next = 2nd node from current node
                 break;
             }
             temp = temp.next;
@@ -180,5 +180,3 @@ public class LinkedList {
         System.out.println("The size of LinkedList is: " + nodeCount);
     }
 }
-
-
